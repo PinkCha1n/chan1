@@ -66,25 +66,13 @@ const osThreadAttr_t systemTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 
-/* Flag set when MPU6050 has been initialized by system task */
-static volatile uint8_t mpu_ready = 0;
-/* Shared MPU values updated by system task (avoids I2C in display task) */
-static volatile int16_t mpu_ax = 0;
-static volatile int16_t mpu_ay = 0;
-static volatile int16_t mpu_az = 0;
-static volatile int16_t mpu_gx = 0;
-static volatile int16_t mpu_gy = 0;
-static volatile int16_t mpu_gz = 0;
-/* Request a one-time full clear on next display loop when entering an app */
-static volatile uint8_t need_full_clear = 0;
-
 /* Private function prototypes -----------------------------------------------*/
 void StartDefaultTask(void *argument);
+
+/* USER CODE BEGIN FunctionPrototypes */
 void StartDisplayTask(void *argument);
 void StartButtonTask(void *argument);
 void StartSystemTask(void *argument);
-
-/* USER CODE BEGIN FunctionPrototypes */
 /* External variables provided by other modules */
 extern RTC_HandleTypeDef hrtc;
 extern uint8_t stopwatch_running;
@@ -133,13 +121,12 @@ void MX_FREERTOS_Init(void) {
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
   /* creation of display, button and system tasks */
   displayTaskHandle = osThreadNew(StartDisplayTask, NULL, &displayTask_attributes);
   buttonTaskHandle = osThreadNew(StartButtonTask, NULL, &buttonTask_attributes);
   systemTaskHandle = osThreadNew(StartSystemTask, NULL, &systemTask_attributes);
-
-  /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -168,6 +155,18 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+/* Flag set when MPU6050 has been initialized by system task */
+static volatile uint8_t mpu_ready = 0;
+/* Shared MPU values updated by system task (avoids I2C in display task) */
+static volatile int16_t mpu_ax = 0;
+static volatile int16_t mpu_ay = 0;
+static volatile int16_t mpu_az = 0;
+static volatile int16_t mpu_gx = 0;
+static volatile int16_t mpu_gy = 0;
+static volatile int16_t mpu_gz = 0;
+/* Request a one-time full clear on next display loop when entering an app */
+static volatile uint8_t need_full_clear = 0;
+
 /* Local edit buffer used when editing time fields */
 static uint8_t edit_time_buf[6]; /* Year(0-99), Mon, Day, Hour, Min, Sec */
 
