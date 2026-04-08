@@ -15,24 +15,24 @@
 ## 系统分层
 
 ### 1) 硬件初始化层
-- `/home/runner/work/chan1/chan1/Core/Src/main.c`
+- `Core/Src/main.c`
 - 负责 HAL 初始化、系统时钟、GPIO/I2C1/I2C2/RTC 初始化以及 RTOS 启动。
 
 ### 2) 驱动层
-- `/home/runner/work/chan1/chan1/Core/Src/OLED.c`
-- `/home/runner/work/chan1/chan1/Core/Src/MPU6050.c`
-- `/home/runner/work/chan1/chan1/Core/Src/rtc.c`
-- `/home/runner/work/chan1/chan1/Core/Src/gpio.c`
+- `Core/Src/OLED.c`
+- `Core/Src/MPU6050.c`
+- `Core/Src/rtc.c`
+- `Core/Src/gpio.c`
 
 ### 3) 业务与 UI 层（主实现）
-- `/home/runner/work/chan1/chan1/Core/Src/freertos.c`
+- `Core/Src/freertos.c`
 - 集中管理任务、菜单状态机、页面渲染、按键行为、系统周期逻辑。
 
 ### 4) 遗留/兼容模块
-- `/home/runner/work/chan1/chan1/Core/Src/menu.c`
-- `/home/runner/work/chan1/chan1/Core/Src/SetTime.c`
-- `/home/runner/work/chan1/chan1/Core/Src/Timer.c`
-- `/home/runner/work/chan1/chan1/Core/Src/MyI2C.c`
+- `Core/Src/menu.c`
+- `Core/Src/SetTime.c`
+- `Core/Src/Timer.c`
+- `Core/Src/MyI2C.c`
 
 说明：以上模块在当前架构中多为历史实现或兼容保留，主流程以 `freertos.c` 为准。
 
