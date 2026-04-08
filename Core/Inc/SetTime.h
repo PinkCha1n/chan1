@@ -1,0 +1,8 @@
+#ifndef __SETTIME_H
+#define __SETTIME_H
+
+#include "main.h" // ÒýÈë HAL ¿â
+
+int SetTime(void);
+
+#endif

@@ -1,0 +1,12 @@
+watch_rtos\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
+watch_rtos\list.o: C:\Users\ChanE\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+watch_rtos\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+watch_rtos\list.o: C:\Users\ChanE\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+watch_rtos\list.o: C:\Users\ChanE\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+watch_rtos\list.o: ../Core/Inc/FreeRTOSConfig.h
+watch_rtos\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+watch_rtos\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+watch_rtos\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+watch_rtos\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+watch_rtos\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+watch_rtos\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

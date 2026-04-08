@@ -1,0 +1,10 @@
+watch_rtos\myrtc.o: ..\Core\Src\MyRTC.c
+watch_rtos\myrtc.o: C:\Users\ChanE\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.2.0\Device\Include\stm32f10x.h
+watch_rtos\myrtc.o: .\RTE\_Watch_rtos\RTE_Components.h
+watch_rtos\myrtc.o: ../Drivers/CMSIS/Include/core_cm3.h
+watch_rtos\myrtc.o: C:\Users\ChanE\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+watch_rtos\myrtc.o: ../Drivers/CMSIS/Include/cmsis_version.h
+watch_rtos\myrtc.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+watch_rtos\myrtc.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+watch_rtos\myrtc.o: C:\Users\ChanE\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.2.0\Device\Include\system_stm32f10x.h
+watch_rtos\myrtc.o: C:\Users\ChanE\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
